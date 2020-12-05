@@ -3,9 +3,8 @@ import '../styles/App.css';
 
 const App = () => {
   const [ timeLeft, setTimeLeft ] = useState(0);
-  let clrinterval = null;
-  const keydownhandler = (event) => {
 
+  const keydownhandler = (event) => {
 	let val = parseInt(event.target.value);
     if(event.keyCode === 96){
       setTimeLeft(0);
@@ -18,7 +17,7 @@ const App = () => {
 	useEffect(
 		() => {
 			if (timeLeft > 0) {
-				clrinterval = setTimeout(() => {
+				const clrinterval = setInterval(() => {
 					setTimeLeft(timeLeft - 1);
         }, 1000);
         return () => clearInterval(clrinterval);
