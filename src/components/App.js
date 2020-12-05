@@ -2,13 +2,14 @@ import React, { Component, useState, useEffect } from 'react';
 import '../styles/App.css';
 
 const App = () => {
-	const [ timeLeft, setTimeLeft ] = useState(0);
+	const [ timeLeft, setTimeLeft ] = useState();
   let clrinterval = null;
   const keydownhandler = (event) => {
     let val = Number(event.target.value);
     // console.log(typeof(val));
     if(event.keyCode === 96){
       setTimeLeft(0);
+      clearInterval(clrinterval);
     }
 		else if (event.keyCode === 13 && Number(val)) {
       setTimeLeft(val);
