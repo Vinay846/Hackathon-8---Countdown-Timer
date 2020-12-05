@@ -2,22 +2,23 @@ import React, { Component, useState, useEffect } from 'react';
 import '../styles/App.css';
 
 const App = () => {
-  const [ timeLeft, setTimeLeft ] = useState();
-  
+  const [ timeLeft, setTimeLeft ] = useState(0);
+  let clrinterval = null;
   const keydownhandler = (event) => {
 
+	let val = parseInt(event.target.value);
     if(event.keyCode === 96){
       setTimeLeft(0);
     }
-    else if (event.keyCode === 13 && Number(event.target.value)) {
-      setTimeLeft(event.target.value);
+	else if (event.keyCode === 13 && Number(val)) {
+      setTimeLeft(val);
 		}
 	};
 
 	useEffect(
 		() => {
 			if (timeLeft > 0) {
-				const clrinterval = setTimeout(() => {
+				clrinterval = setTimeout(() => {
 					setTimeLeft(timeLeft - 1);
         }, 1000);
         return () => clearInterval(clrinterval);
