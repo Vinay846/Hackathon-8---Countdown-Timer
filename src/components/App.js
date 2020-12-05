@@ -5,12 +5,12 @@ const App = () => {
   const [ timeLeft, setTimeLeft ] = useState(0);
 
   const keydownhandler = (event) => {
-	let val = parseInt(event.target.value);
-    if(event.keyCode === 13 && isNaN(val) || val === 0){
+	let val = event.target.value;
+    if(event.keyCode === 13 && isNaN(val) || parseInt(val) === 0){
       setTimeLeft(0);
     }
 	else if (event.keyCode === 13 && Number(val)) {
-      setTimeLeft(val);
+			setTimeLeft(parseInt(val));
 		}
 	};
 
