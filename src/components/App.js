@@ -30,7 +30,7 @@ const App = () => {
 		<div className="wrapper">
 			<div id="whole-center">
 				<h1>
-					Reverse countdown for<input id="timeCount" onKeyDown={keydownhandler} /> sec.
+					Reverse countdown for<input id="timeCount" type="number" onKeyDown={keydownhandler} /> sec.
 				</h1>
 			</div>
 			<div id="current-time">{timeLeft}</div>
