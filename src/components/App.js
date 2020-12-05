@@ -9,8 +9,8 @@ const App = () => {
     if(event.keyCode === 96){
       setTimeLeft(0);
     }
-		else if (event.keyCode === 13 && Number(event.target.value)) {
-      setTimeLeft(val);
+    else if (event.keyCode === 13 && Number(event.target.value)) {
+      setTimeLeft(event.target.value);
 		}
 	};
 
