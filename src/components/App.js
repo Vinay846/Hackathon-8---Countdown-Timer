@@ -6,14 +6,11 @@ const App = () => {
   let clrinterval = null;
   const keydownhandler = (event) => {
     let val = Number(event.target.value);
-    // console.log(typeof(val));
     if(event.keyCode === 96){
       setTimeLeft(0);
-      clearInterval(clrinterval);
     }
 		else if (event.keyCode === 13 && Number(val)) {
       setTimeLeft(val);
-      clearInterval(clrinterval);
 		}
 	};
 
