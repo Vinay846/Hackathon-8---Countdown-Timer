@@ -3,17 +3,23 @@ import '../styles/App.css';
 
 const App = () => {
 	const [ timeLeft, setTimeLeft ] = useState(0);
-
+  let clrinterval = null;
   const keydownhandler = (event) => {
-		if (event.keyCode === 13) {
-      setTimeLeft(event.target.value);
+    let val = Number(event.target.value);
+    // console.log(typeof(val));
+    if(event.keyCode === 96){
+      setTimeLeft(0);
+    }
+		else if (event.keyCode === 13 && Number(val)) {
+      setTimeLeft(val);
+      clearInterval(clrinterval);
 		}
 	};
 
 	useEffect(
 		() => {
 			if (timeLeft > 0) {
-				const clrinterval = setTimeout(() => {
+				clrinterval = setTimeout(() => {
 					setTimeLeft(timeLeft - 1);
         }, 1000);
         return () => clearInterval(clrinterval);
