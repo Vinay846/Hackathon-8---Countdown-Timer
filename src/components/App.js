@@ -6,7 +6,7 @@ const App = () => {
 
   const keydownhandler = (event) => {
 	let val = parseInt(event.target.value);
-    if(val === 0){
+    if(event.keyCode === 13 && isNaN(val) || val === 0){
       setTimeLeft(0);
     }
 	else if (event.keyCode === 13 && Number(val)) {
