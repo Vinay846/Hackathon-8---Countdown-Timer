@@ -6,7 +6,7 @@ const App = () => {
 
   const keydownhandler = (event) => {
 	let val = parseInt(event.target.value);
-    if(event.keyCode === 96){
+    if(val === 0){
       setTimeLeft(0);
     }
 	else if (event.keyCode === 13 && Number(val)) {
@@ -30,7 +30,7 @@ const App = () => {
 		<div className="wrapper">
 			<div id="whole-center">
 				<h1>
-					Reverse countdown for<input id="timeCount" type="number" onKeyDown={keydownhandler} /> sec.
+					Reverse countdown for<input id="timeCount" onKeyDown={keydownhandler} /> sec.
 				</h1>
 			</div>
 			<div id="current-time">{timeLeft}</div>
